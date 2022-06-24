@@ -1,0 +1,107 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "env": {
+    "node": true
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/base",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "no-plusplus": "off",
+
+    /**
+     * @description use 2 spaces
+     */
+    "indent": "off",
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+
+
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+
+    "no-console": "off",
+    "no-constant-condition": [
+      "error",
+      {
+        "checkLoops": false
+      }
+    ],
+
+
+    /**
+     * @Interface naming
+     */
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+
+    /**
+     * @description rules of eslint official
+     */
+    /**
+     * @bug https://github.com/benmosher/eslint-plugin-import/issues/1282
+     * "import/named" temporary disable.
+     */
+    "import/named": "off",
+
+    /**
+     * @bug?
+     * "import/export" temporary disable.
+     */
+    "import/export": "off",
+    "import/prefer-default-export": "off",
+    // Allow single Named-export
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    // https://eslint.org/docs/rules/no-unused-expressions
+
+    /**
+     * @description rules of @typescript-eslint
+     */
+    "@typescript-eslint/prefer-interface": "off",
+    // also want to use "type"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // annoying to force return type
+
+    /**
+    * @description rules of eslint-plugin-react-hooks
+    */
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ]
+  }
+}
