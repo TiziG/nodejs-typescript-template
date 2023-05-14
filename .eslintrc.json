@@ -8,11 +8,12 @@
     "node": true
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
-    "airbnb-typescript",
+    "airbnb-typescript/base",
     "plugin:@typescript-eslint/base",
     "plugin:import/typescript"
   ],
@@ -61,20 +62,7 @@
       }
     ],
 
-    /**
-     * @description rules of eslint official
-     */
-    /**
-     * @bug https://github.com/benmosher/eslint-plugin-import/issues/1282
-     * "import/named" temporary disable.
-     */
-    "import/named": "off",
 
-    /**
-     * @bug?
-     * "import/export" temporary disable.
-     */
-    "import/export": "off",
     "import/prefer-default-export": "off",
     // Allow single Named-export
     "no-unused-expressions": [
@@ -91,17 +79,8 @@
      */
     "@typescript-eslint/prefer-interface": "off",
     // also want to use "type"
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
     // annoying to force return type
 
-    /**
-    * @description rules of eslint-plugin-react-hooks
-    */
-    "no-underscore-dangle": [
-      "error",
-      {
-        "allowAfterThis": true
-      }
-    ]
   }
 }
