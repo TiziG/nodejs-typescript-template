@@ -1,5 +1,5 @@
 {
-  "name": "tt-trader",
+  "name": "beter-backend",
   "version": "1.0.0",
   "main": "build/server.js",
   "scripts": {
